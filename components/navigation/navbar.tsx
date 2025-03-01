@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { SheetClose } from "@/components/ui/sheet"
 import Anchor from "@/components/navigation/anchor"
 import { Logo } from "@/components/navigation/logo"
-import Search from "@/components/navigation/search"
+// import Search from "@/components/navigation/search"
 import { SheetLeft } from "@/components/navigation/sidebar"
 import { ModeToggle } from "@/components/navigation/theme-toggle"
 
@@ -27,7 +27,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Search />
+          {/* <Search /> */}
           <div className="flex sm:ml-0 gap-2">
             {GitHubLink.href && (
               <Link
