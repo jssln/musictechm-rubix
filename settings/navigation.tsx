@@ -1,11 +1,11 @@
 // import { PageRoutes } from "@/lib/pageroutes"
 
 export const Navigations = [
-  // {
-  //   title: "Learn & do",
-  //   href: `/learn${PageRoutes[0].href}`,
-  //   external: false,
-  // },
+  {
+    title: "Contact organizer",
+    href: `mailto:jess@jssln.com`,
+    external: true,
+  },
   // {
   //   title: "Home",
   //   href: "https://www.rubixstudios.com.au/",
