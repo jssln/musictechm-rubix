@@ -10,8 +10,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo/Name */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-xl font-bold">Boston Music & Tech</h2>
-            <p className="text-gray-400 mt-2">Connect. Create. Collaborate.</p>
+            <h2 className="text-xl font-bold">Boston Music & Tech Meetup</h2>
+            <p className="text-gray-400 mt-2">connect / share / learn</p>
           </div>
 
           {/* Links */}
