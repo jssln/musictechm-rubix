@@ -15,11 +15,11 @@ export default function PageBreadcrumb({ paths }: { paths: string[] }) {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink>Docs</BreadcrumbLink>
+            <BreadcrumbLink>Home</BreadcrumbLink>
           </BreadcrumbItem>
 
           {paths.map((path, index) => {
-            const href = `/docs/${paths.slice(0, index + 1).join("/")}`
+            const href = `/learn/${paths.slice(0, index + 1).join("/")}`
 
             return (
               <Fragment key={path}>
