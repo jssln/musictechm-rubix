@@ -2,6 +2,11 @@
 
 export const Navigations = [
   {
+    title: "Learn",
+    href: `/learn/demos`,
+    external: false,
+  },
+  {
     title: "Contact organizer",
     href: `mailto:jess@jssln.com`,
     external: true,

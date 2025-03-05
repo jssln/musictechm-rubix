@@ -14,6 +14,10 @@ export const Documents = [
             },
         ],
     },
+    {
+        title: "Sponsors",
+        href: "/sponsors",
+    },
     // {
     //   title: "Introduction",
     //   href: "/introduction",
