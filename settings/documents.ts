@@ -16,6 +16,10 @@ export const Documents: Paths[] = [
       },
     ],
   },
+  {
+    title: "Sponsors",
+    href: "/sponsors",
+  },
   // {
   //   title: "Introduction",
   //   href: "/introduction",
