@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { GitHubLink } from "@/settings/navigation"
+// import { GitHubLink } from "@/settings/navigation"
 import { LuMail } from "react-icons/lu"
 
 import { cn } from "@/lib/utils"
