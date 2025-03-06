@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { GoogleTagManager } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -51,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
+      {process.env.NODE_ENV == "production" && <GoogleAnalytics gaId="G-F3M4KV9PH5" /> }
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
         suppressHydrationWarning
