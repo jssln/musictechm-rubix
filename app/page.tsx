@@ -16,10 +16,10 @@ export default function Home() {
           A community of makers and creators working on music & tech
         </p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col sm:flex-row items-center gap-5">
           <ClickTrackedLink
             href={`/learn/demos`}
-            className={buttonVariants({ className: "px-6", size: "lg" })}
+            className={buttonVariants({ className: "px-6 w-full sm:w-auto", size: "lg" })}
             eventName="clicked_hero_viewprojects"
           >
             View community projects
@@ -27,7 +27,7 @@ export default function Home() {
           <ClickTrackedLink
             href={`https://dashboard.mailerlite.com/forms/1361131/147685666495399194/share`}
             openInNewTab={true}
-            className={buttonVariants({ className: "px-6", size: "lg" })}
+            className={buttonVariants({ className: "px-6 w-full sm:w-auto", size: "lg" })}
             eventName="clicked_hero_subscribe"
           >
             Subscribe to updates
