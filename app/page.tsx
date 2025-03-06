@@ -1,9 +1,9 @@
-import Link from "next/link"
 import Image from "next/image"
 // import { PageRoutes } from "@/lib/pageroutes"
 import { buttonVariants } from "@/components/ui/button"
 import CardGrid from "@/components/markdown/cardgrid"
 import Card from "@/components/markdown/card"
+import ClickTrackedLink from "@/components/google_analytics/ClickTrackedLink"
 
 export default function Home() {
   return (
@@ -17,19 +17,21 @@ export default function Home() {
         </p>
 
         <div className="flex items-center gap-5">
-          <Link
+          <ClickTrackedLink
             href={`/learn/demos`}
             className={buttonVariants({ className: "px-6", size: "lg" })}
+            eventName="clicked_hero_viewprojects"
           >
             View community projects
-          </Link>
-          <Link
+          </ClickTrackedLink>
+          <ClickTrackedLink
             href={`https://dashboard.mailerlite.com/forms/1361131/147685666495399194/share`}
-            target="_blank"
+            openInNewTab={true}
             className={buttonVariants({ className: "px-6", size: "lg" })}
+            eventName="clicked_hero_subscribe"
           >
             Subscribe to updates
-          </Link>
+          </ClickTrackedLink>
         </div>
       </div>
 
