@@ -2,15 +2,25 @@ export const Documents = [
     {
         title: "Demo nights",
         href: "/demos",
-        heading: "Events",
+        heading: "Learn",
         items: [
             {
-                title: "Zoot",
+                title: "Zoot: expressive electronic wind instrument",
                 href: "/zoot",
             },
             {
-                title: "dymm",
+                title: "dymm: dynamic MIDI mapper for e-drums",
                 href: "/dymm",
+            },
+        ],
+    },
+    {
+        title: "Stories",
+        href: "/stories",
+        items: [
+            {
+                title: "ChillDeck: DJ app that won 2025 MIT web.lab competition",
+                href: "/chilldeck",
             },
         ],
     },

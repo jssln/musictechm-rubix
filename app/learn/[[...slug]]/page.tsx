@@ -37,7 +37,7 @@ export default async function Pages({ params }: PageProps) {
         </Typography>
       </div>
       {Settings.rightbar && (
-        <div className="hidden xl:flex xl:flex-col sticky top-16 gap-3 py-8 min-w-[230px] h-[94.5vh] toc">
+        <div className="hidden xl:flex xl:flex-col sticky top-16 gap-3 py-8 min-w-[230px] max-w-[300px] h-auto toc">
           {Settings.toc && <Toc tocs={tocs} />}
           {Settings.feedback && (
             <Feedback slug={pathName} title={frontmatter.title} />
