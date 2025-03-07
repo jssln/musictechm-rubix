@@ -1,0 +1,111 @@
+---
+title: ChillDeck
+description: A beginner-friendly DJ board that runs in your browser
+keywords: ["chilldeck", "electronic instrument", "DJ", "web application", "web development"]
+---
+
+This January, a team of three MIT freshmen won second prize at the annual [MIT web.lab](https://weblab.mit.edu/) programming competition—with a very unique app. In under a month, they built [ChillDeck](https://chilldeck.onrender.com/), an approachable DJ board that you can use directly in your web browser.
+
+They also won a special prize for Best Futuristic UI Design.
+
+![ChillDeck UI](/images/stories/chilldeck/chilldeck-ui.png)
+
+We had the pleasure of chatting with the team: Alex Li, Catherine Tu, and Sean Wilson.
+
+![ChillDeck team](/images/stories/chilldeck/chilldeck-team.jpeg)
+
+
+This is Part 1 of 2. In our first chat, they shared how they got the idea; the process that led to their intuitive, attractive interface; and the design choices they made to transform a complex physical DJ board into a beginner-friendly web app.
+
+In Part 2, we’ll dive into the code to understand the key technical parts of the audio features.
+
+## Try ChillDeck
+https://chilldeck.onrender.com/
+
+## Personal intros & musical background
+### Q: Could you each introduce yourself and share your personal connection to music, even before MIT?
+
+**Catherine**: I'm a freshman at MIT, leaning towards studying Computer Science. Before MIT, I was part of choir from third to eighth grade. I didn't pursue it in high school, but I learned guitar during COVID and made song covers that I posted to YouTube. Now we're all part of an acapella group at MIT called the [Logarhythms](https://www.themitlogs.com/)), or the Logs for short. That’s where the three of us met.
+
+**Alex**: I'm also a freshman, studying [Course 6-4: Artificial Intelligence and Decision Making](https://catalog.mit.edu/degree-charts/artifical-intelligence-decision-making-course-6-4/) and possibly double majoring in math. Music has been a constant in my life—both my siblings sing, and my brother plays guitar and produces music too. I got inspired by him. I sang in choruses and choirs growing up, did a cappella in high school, and learned piano and violin as a kid. I’m keeping up my love for music in college through a cappella and projects like ChillDeck.
+
+**Sean**: I'm also a freshman, planning to study 6-4 too. My musical story started in kindergarten when they brought in a guitar and a violin and said "Pick one: that's your thing from now on." I played guitar until seventh grade and then started writing songs—very “middle schooler” songs, I'll admit. Then I joined choir in high school and did musical theater. My sister is a musical theater major, so we have a love for that in my family. I'm pretty much always singing. I catch myself singing, I can't help it! And like Catherine and Alex, I'm in the Logs, keeping music in my life.
+
+### Q: How did you come together as a team? Was web.lab your first time working together?
+**Team**: We met through the Logs, but we've been spending a lot of time together beyond that—having dinner at Maseeh (dining hall), playing squash, and doing various activities. We got much closer through our first semester, and our friendship definitely helped us work together better in web.lab.
+
+## Getting the idea for ChillDeck
+
+### Q: Could you describe ChillDeck in your own words? What was the vision behind it?
+**Alex**: The idea came from my experience learning to DJ during my first semester at MIT. We recognized that DJ boards are expensive and DJing is a niche hobby that can be intimidating to get into. Our vision was to make it accessible by putting it on the internet, creating a simplified version that lets people try DJing without the initial investment. Existing websites tend to be complicated with cluttered UIs where it’s hard to understand what each button does, and we wanted to change that.
+
+![Traditional DJ board](/images/stories/chilldeck/dj-board-traditional.png)
+_A physical DJ board_
+
+### Q: How did you decide on this project among your other ideas?
+**Catherine**: For one of the early milestones in web.lab, they required us to come up with 10 project ideas. But honestly, when Alex had the DJ idea, I knew in my head this is what we're going with. We still brainstormed different ideas, and the web.lab staff gave us really good feedback. They also liked the DJ board idea the best because it was tailored towards beginners, and there really wasn't any other website out there that had a tutorial page or such a usable UI.
+
+**Sean**: Most teams in web.lab competitions typically build games or productivity tools. Our DJ app broke that mold, which I think contributed to our success. The functionality was unique and addressed a real need.
+
+### Q: This year’s web.lab competition had a theme of "branching out." How did ChillDeck align with that?
+
+**Team**: ChillDeck fit the theme because it helps people branch out into a new hobby. We created a way for anyone to try DJing without the usual barriers to entry.
+
+## Design process & UI development
+
+### Q: Your UI design is remarkably intuitive. Could you walk us through your design process?
+
+**Catherine**: We iterated a lot. For one of the milestones in web.lab, we had to design our UI in Figma. The original design we submitted looks pretty different from our final UI. There wasn’t really a version 1 versus version 2 either: it was more like version 1 through 50.
+
+![Original ChillDeck UI design](/images/stories/chilldeck/chilldeck-ui-v1.png)
+_The original UI design_
+
+**Sean**: The key to our design success was constant user testing. We showed our app to everyone, even our competitors. When you put a screen in front of somebody and just see how they want to interact with it, you can naturally find ways to make it more intuitive. For example, when I worked on the tutorial page, I'd observe Alex trying to click certain areas I hadn't implemented.
+
+We also made important decisions about simplification. Traditional DJ boards have eight buttons on each side, but we cut it down to four to make it more approachable and less overwhelming for new users.
+
+### Q: How did you decide what features to keep and what to remove?
+**Alex**: Coming into the project, I had an understanding of DJ boards because I’ve used one. So I knew there were many buttons—like some of the eight buttons Sean mentioned—that don’t often get used.
+
+We cut out features like:
+- **Looping functionality**: While it's useful for EDM music to repeat small sections before transitions, most DJs don't use it frequently.
+- **Complex audio effects**: We removed various audio morphing effects that would suddenly alter bass or other audio stems.
+- **Detailed equalizer controls**: Physical DJ boards have many knobs for controlling individual audio elements, but these are a bit less intuitive for people getting started.
+
+To me, one of the most essential functions on a DJ board is stem separation—the ability to isolate bass, drums, and melody. So we focused on that. Stem separation is critical for transitioning between songs and creates an impressive effect that showcases what DJing can do.
+
+## Technical implementation
+### Q: Could you explain how you implemented the audio processing and controls?
+
+**Alex**: The audio implementation has several key components:
+- **Stem separation**: We use [AudioShake](https://www.audioshake.ai/)'s API for this. We initially looked at JavaScript libraries, but audio processing at this level really needs AI to sound good. AudioShake was very supportive when we reached out about using their API for the competition.
+- **Audio visualization**: We used the [Wavesurfer](https://wavesurfer.xyz/) JavaScript library for the waveforms, volume control, and tempo control. Each track (top and bottom) actually runs five synchronized components:
+    - Four components for each audio stem
+    - One for the timeline and playhead
+- **BPM control**: This was a bit challenging. The sync button in ChillDeck matches the BPM of both tracks, so you can line up songs the way you want to. The Wavesurfer library lets you adjust the rate of the waveforms and audio, but it uses the original tempo of the song that you upload as a baseline, and then you need to supply a multiplier on top of that. So if you want to increase from 80 BPM to 100 BPM, you have to multiply by 1.925 to get to 100. We had to calculate different multipliers for different songs, and carefully sync both the audio and the visual playhead to keep everything aligned.
+
+## Teamwork & web.lab experience
+
+### Q: What was your experience like working together as a team?
+**Sean**: It was really fun working with Catherine and Alex. I’ll give a shout out to Catherine for acting as our team manager. She would keep us on track and schedule daily work sessions in the student center. Those sessions ended up being really productive and enjoyable and paid off.
+
+**Alex**: Yeah, shout out to Catherine. She also set weekly goals for us. We also just worked together really well. I noticed some other teams occasionally beefing a bit. We managed to stay positive and collaborative with each other, and I think that definitely contributed a lot to our success.
+
+### Q: What were the highlights of web.lab as a learning experience?
+
+**Catherine**: As someone who had never done web development before, it was exciting that web.lab is taught by students for students. The first two weeks were intense, like drinking from a fire hose, but once we started our project, the concepts started clicking. web.lab is often recommended as the best IAP program for freshmen, and I can see why.
+
+**Sean**: While it was fast-paced, the extensive office hours were incredibly helpful, and they were the highlight of web.lab for me. The staff was supportive, and getting their help debugging our actual project was the most effective way for me to learn.
+
+## Future plans
+### Q: What's next for ChillDeck? Any features you're planning to add?
+**Catherine**: We actually got an “import songs” feature working locally right before the deadline, but ran into deployment issues due to differences in the file storage systems. That's something we might work on next. We're also considering joining the web.lab staff: it would be exciting to go from learning web development to teaching it!
+
+### Learn more
+**Thanks so much, Alex, Catherine, and Sean! Where can folks find you if they want to get in touch or learn more about ChillDeck?**
+- Alex Li: [LinkedIn](https://www.linkedin.com/in/alexander-l-li/) and [GitHub](https://github.com/alexander-l-li).
+- Catherine Tu: [LinkedIn](https://www.linkedin.com/in/catherine-tu-/) and [GitHub](https://github.com/catherine-tu).
+- Sean Wilson: [LinkedIn](https://www.linkedin.com/in/seanwilson16/)
+
+_Stay tuned for Part 2, where we’ll dive into the code to understand the key technical parts of the audio features._
+
