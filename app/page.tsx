@@ -51,8 +51,14 @@ export default function Home() {
       </div>
 
       <div className="min-h-[60.5vh] flex flex-col justify-center items-center text-center px-2 py-8 bg-gradient-to-br from-blurple-600 via-[#3471eb] to-magenta-400">
-        <h1 className="text-5xl font-bold sm:text-7xl text-white mb-20">Recent demos</h1>
+        <h1 className="text-5xl font-bold sm:text-7xl text-white mb-20">Recent demos & stories</h1>
         <CardGrid>
+        <Card
+            subtitle="March 7, 2025"
+            title="ChillDeck"
+            description="DJ app that won MIT's 2025 web.lab competition"
+            href="/learn/stories/chilldeck"
+          />
           <Card
             subtitle="March 1, 2025"
             title="Zoot"
