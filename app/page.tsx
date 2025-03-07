@@ -25,12 +25,12 @@ export default function Home() {
             View community projects
           </ClickTrackedLink>
           <ClickTrackedLink
-            href={`https://dashboard.mailerlite.com/forms/1361131/147685666495399194/share`}
+            href={`https://www.meetup.com/boston-music-tech-meetup/`}
             openInNewTab={true}
             className={buttonVariants({ className: "px-6 w-full sm:w-auto", size: "lg" })}
-            eventName="clicked_hero_subscribe"
+            eventName="clicked_hero_joinmeetup"
           >
-            Subscribe to updates
+            Join the Meetup
           </ClickTrackedLink>
         </div>
       </div>

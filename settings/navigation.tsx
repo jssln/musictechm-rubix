@@ -7,6 +7,11 @@ export const Navigations = [
     external: false,
   },
   {
+    title: "Join",
+    href: `https://www.meetup.com/boston-music-tech-meetup/`,
+    external: true,
+  },
+  {
     title: "Contact organizer",
     href: `mailto:jess@jssln.com`,
     external: true,
