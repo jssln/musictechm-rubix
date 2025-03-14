@@ -12,6 +12,11 @@ export const Navigations = [
     external: true,
   },
   {
+    title: "Get newsletter",
+    href: `https://dashboard.mailerlite.com/forms/1361131/147685666495399194/share`,
+    external: true,
+  },
+  {
     title: "Contact organizer",
     href: `mailto:jess@jssln.com`,
     external: true,
